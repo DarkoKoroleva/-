@@ -1,0 +1,20 @@
+data = load("error.txt");
+
+semilogx(data(:, 1), data(:, 2));
+grid on;
+hold on;
+
+figure
+semilogx(data(:, 1), data(:, 3));       % графика полинома
+grid on;
+hold on;
+
+f =@ (x) (x.^2);
+x = 0:0.01:0;
+func = f(x);
+figure
+loglog(data(:, 1), data(:,4));
+loglog(data(:, 1), func);
+grid on;
+hold on;
+
